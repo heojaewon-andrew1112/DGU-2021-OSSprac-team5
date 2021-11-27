@@ -4,7 +4,17 @@ app = Flask(__name__)
 
 @app.route('/')
 def student():
-   return render_template('student_info.html')
+   return render_template('main.html')
+
+@app.route('/detail', methods = ['POST', 'GET'])
+def detail():
+   if request.method == 'POST':
+      result = dict()
+      result['Name'] = request.form.get('Name')
+      result['StudentNumber'] = request.form.get('StudentNumber')
+      result['Gender'] = request.form.get('Gender')
+      result['Major'] = request.form.get('Major')
+      return render_template("detail.html",result = result)
 
 @app.route('/result', methods = ['POST', 'GET'])
 def result():
@@ -14,7 +24,6 @@ def result():
       result['StudentNumber'] = request.form.get('StudentNumber')
       result['Gender'] = request.form.get('Gender')
       result['Major'] = request.form.get('Major')
-      result['languages'] = ', '.join(request.form.getlist('languages'))
       return render_template("result.html",result = result)
 
 if __name__ == '__main__':
