@@ -19,7 +19,7 @@ def detail():
 @app.route('/result', methods = ['POST', 'GET'])
 def result():
    if request.method == 'POST':
-      return render_template("result.html",result = result)
+      return render_template("result.html")
 
 if __name__ == '__main__':
    app.run(host="0.0.0.0", debug=True, port=80)
