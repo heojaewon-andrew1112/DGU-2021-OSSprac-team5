@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <form action="/result" method="POST">
+      <table border=1>
+        {% for key, value in result.items() %}
+
+        <tr>
+          <th>{{ key }}</th>
+          <td><input type="text" value="{{ value }}" readonly /></td>
+        </tr>
+
+        {% endfor %}
+      </table>
+      <button onclick="histroy.back()">Modify</button>
+      <input type="submit" value="submit" />
+    </form>
+  </body>
+</html>
