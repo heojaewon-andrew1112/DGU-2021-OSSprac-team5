@@ -19,7 +19,6 @@ def detail():
 @app.route('/result', methods = ['POST', 'GET'])
 def result():
    if request.method == 'POST':
-      result = dict()
       result['Name'] = request.form.get('Name')
       result['StudentNumber'] = request.form.get('StudentNumber')
       result['Gender'] = request.form.get('Gender')
