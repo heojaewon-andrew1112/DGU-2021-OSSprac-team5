@@ -22,7 +22,11 @@ def detail():
 @app.route('/result', methods=['POST', 'GET'])
 def result():
     if request.method == 'POST':
-        result = request.form
+        result = dict()
+        result['Name'] = request.form.get('Name')
+        result['StudentNumber'] = request.form.get('StudentNumber')
+        result['Gender'] = request.form.get('Gender')
+        result['Major'] = request.form.get('Major')
         return render_template("result.html", result=result)
 
 
