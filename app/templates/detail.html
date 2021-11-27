@@ -1,18 +1,21 @@
 <!doctype html>
 <html>
    <body>
-   
-      <table border = 1>
-         {% for key, value in result.items() %}
+      
+      <form action = "/result" method = "POST">
+         <table border = 1>
+            {% for key, value in result.items() %}
          
-            <tr>
-               <th> {{ key }} </th>
-               <td> {{ value }} </td>
-            </tr>
+               <tr>
+                  <th> {{ key }} </th>
+                  <td> {{ value }} </td>
+               </tr>
             
-         {% endfor %}
-      </table>
-      <p><input type="button" value="MODIFY" onClick="history.go(-1)"> <input type = "submit" value = "SUBMIT" /></p>
+            {% endfor %}
+         </table>
+         <p><input type="button" value="MODIFY" onClick="location.href='/'"> <input type = "submit" value = "SUBMIT" /></p>
+         <p><input type="button" value="MODIFY" onClick="history.go(-1)"> <input type = "submit" value = "SUBMIT" /></p>
+      </form>
 
    </body>
 </html>
